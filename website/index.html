@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Racial Disparity in NYC Child Welfare System</title>
+
+    <meta property="og:title" content="NYC Child Welfare">
+    <meta property="og:description" content="Racial Disparity in NYC Child Welfare System">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="">
+
+    <!-- Google fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-size: 20px;
+            font-family: 'Albert Sans', sans-serif;
+            text-rendering: optimizeLegibility;
+            background-color: white;
+        }
+
+        .content {
+            max-width: 640px;
+            margin: auto;
+        }
+
+        .header {
+            padding: 3em 0;
+        }
+
+        a {
+            color: #0000EE;
+        }
+
+        .footer {
+            background: #f4f4f4;
+            text-align: center;
+            font-size: 0.8em;
+            margin-top: 4em;
+            padding: 4em 0;
+        }
+
+        figure {
+            padding-bottom: 1.2em;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        figcaption {
+            font-size: 0.8em;
+            text-align: center;
+            margin-top: 0.5em;
+            color: #666;
+        }
+
+        h1 {
+            font-family: 'Tinos', Georgia, serif;
+            font-size: 3em;
+            line-height: 1.1;
+            text-align: center;
+            font-weight: 500;
+            text-rendering: optimizeLegibility;
+        }
+
+        .subhead {
+            font-family: 'Albert Sans', sans-serif;
+            text-align: left;
+            margin-top: 0.5em;
+
+
+        }
+
+        .byline {
+            font-family: 'Albert Sans', sans-serif;
+            font-size: 1em;
+            text-align: left;
+            margin-top: 0.5em;
+            font-weight: 500;
+        }
+
+        .full-width {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+            margin: auto;
+
+        }
+
+        iframe,
+        img,
+        video {
+            max-width: 100%;
+            object-fit: cover;
+
+        }
+
+        p {
+            line-height: 1.6;
+            margin: 0;
+            padding-bottom: 1.2em;
+        }
+
+        ul {
+            margin: 0;
+            padding-bottom: 1em;
+            line-height: 1.6;
+        }
+
+        iframe {
+            padding-bottom: 1.2em;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            background: #fffbaf;
+            font-size: 0.85em;
+        }
+
+        /* margin on mobile */
+        @media (max-width: 640px) {
+            body {
+                font-size: 18px;
+            }
+
+            .content {
+                padding-left: 0.5em;
+                padding-right: 0.5em;
+            }
+        }
+    </style>
+
+
+
+    <!-- Scrolly stuff -->
+
+    <style>
+        .scrolly-container {
+            position: relative;
+            margin-bottom: 1.2em;
+        }
+
+        .sticky-thing {
+            position: sticky;
+            top: 0;
+            transform: translate(0px, 0px);
+            z-index: 0;
+            height: 100svh;
+            width: 100vw;
+            margin: 0;
+            overflow: hidden;
+            /* Center everything inside */
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .sticky-thing>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .scrolly-container video {
+            position: absolute;
+            top: 0;
+            height: auto;
+            width: 100%;
+        }
+
+        .sticky-thing iframe {
+            position: absolute;
+            top: 0;
+            max-width: 100%;
+            min-height: 100vh;
+        }
+
+        .steps-container {
+            transform: translate3d(0, 0, 0);
+            position: relative;
+            padding: 0;
+            z-index: 10;
+            max-width: 35rem;
+            margin: 0 auto;
+            padding-bottom: 4em;
+        }
+
+        .step {
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50svh;
+            transform: translate(0px, 0px);
+            opacity: 0.8;
+        }
+
+        .step p {
+            text-align: left;
+        }
+
+        .step p:last-child {
+            padding: 0;
+        }
+
+        .step>* {
+            width: 700px;
+            margin-left: 1.3em;
+            margin-right: 1.3em;
+            text-align: center;
+            padding: 1.2em !important;
+            background-color: white;
+        }
+
+        .sticky-thing>canvas {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* When it's less than 700 pixels wide, do normal scrollytelling */
+
+        @media only screen and (min-width: 700px) {
+            .scrolly-container.side-by-side {
+                display: flex;
+            }
+
+            .scrolly-container.side-by-side>div {
+                flex-basis: 0;
+                flex-grow: 1;
+                flex-shrink: 1;
+                padding: 0.75em;
+            }
+
+            .scrolly-container.side-by-side .scrolly-overlay {
+                margin-top: 70vh;
+                order: 0;
+                /* Change these to adjust sizing options */
+                min-width: 15rem;
+                max-width: 20rem;
+            }
+
+            .scrolly-container.side-by-side .sticky-thing {
+                order: 1;
+                flex-grow: 2;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="header">
+            <h1>In NYC, Black Children are 49% More Likely to be in Foster Care than Hispanic Children</h1>
+            <div class="byline">
+                <p>By Katrina Ventura</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <p>It has been more than 20 years since child services came knocking on Shanene Bryant’s home in the Bronx to
+            take away her two children. “I tried my best to hold it together,” said Bryant. “I didn’t want my children
+            to know and just said, ‘You’re going with Grandma’.”</p>
+
+        <p>Bryant, 45, now works at Rise Magazine, an organization of parents impacted by the family policing system who
+            offer support to other parents who are trying to gain custody of their children placed in foster care. She
+            was one of many advocates representing impacted parents at the public hearing on the child welfare system
+            and the mandatory reporting of child abuse of maltreatment. Among the concerns raised were the racial and
+            ethnic disparities in the mandatory reporting of children in need of protection. </p>
+
+        <p>According to ACS Commissioner Jess Dannhauser, a Black child was 6.7 times more likely than a White child to
+            be subject in a child protection investigation.While a Hispanic or Latinx child was 4.7 times more likely
+            than a White child to be subject in a child protection investigation.</p>
+
+        <p>However, analysis of child abuse reports from the Administration for Children's Services in 2022 reveals that
+            Black children have 1.49 times higher odds of ending up in foster care compared to Hispanic children.</p>
+    </div>
+
+    <figure><img src="092723-assembly-hearing.png">
+        <figcaption>September 27, 2023 New York City Hall Assembly Hearing on the child welfare system and the mandatory
+            reporting of child abuse of maltreatment</figcaption>
+    </figure>
+
+    <div class="content">
+        <p>A recent <a
+                href="https://www.nyclu.org/report/racism-every-stage-data-shows-how-nycs-administration-childrens-services-discriminates">report</a>
+            by the New York Civil Liberties Union argued that there is racism at every stage of the child welfare
+            system, noting that more Black families are reported on than White families.</p>
+
+        <p>A child enters the welfare system when a report to the Statewide Central Register of Child Abuse and
+            Maltreatment (SCR) is made by a mandated reporter. Mandated reporters include professionals such as doctors,
+            nurses, teachers, police officers, and child care center workers to report suspected child abuse and neglect
+            to the state hotline. This practice has come under scrutiny by some child advocates due to concerns about
+            potential bias in reporting, particularly concerning certain races or ethnicities.</p>
+
+        <p>ACS data for 2022 show a total of 92,305 SCR reports were made that year. Hispanic children made up 41,247
+            reports while 34,923 of child abuse reports were Black children. Early steps in the child welfare system
+            determine which cases are handled as a Collaborative Assessment, Response, Engagement and Support (CARES)
+            program, or deemed unsubstantiated by Child Protective Services. The remaining reports are then indicated
+            for investigation.</p>
+
+        <p>In 2022, 27% of child abuse reports in New York City were indicated for investigation and less than 3% of
+            these children ended up in foster care. More Hispanic children than Black children are reported at the
+            initial stage of the child welfare system, but as each stage progresses the difference between the two
+            groups becomes more apparent. </p>
+
+    </div>
+
+    <br>
+
+    <figure>
+        <!-- Generated by ai2html v0.120.2 - 2024-05-07 19:10 -->
+        <!-- ai file: sankey-final.ai -->
+        <style media="screen,print">
+            #g-sankey-final-box,
+            #g-sankey-final-box .g-artboard {
+                margin: 0 auto;
+            }
+
+            #g-sankey-final-box p {
+                margin: 0;
+            }
+
+            #g-sankey-final-box .g-aiAbs {
+                position: absolute;
+            }
+
+            #g-sankey-final-box .g-aiImg {
+                position: absolute;
+                top: 0;
+                display: block;
+                width: 100% !important;
+            }
+
+            #g-sankey-final-box .g-aiSymbol {
+                position: absolute;
+                box-sizing: border-box;
+            }
+
+            #g-sankey-final-box .g-aiPointText p {
+                white-space: nowrap;
+            }
+
+            #g-sankey-final-Artboard_1 {
+                position: relative;
+                overflow: hidden;
+            }
+
+            #g-sankey-final-Artboard_1 p {
+                font-family: arial, helvetica, sans-serif;
+                line-height: 22px;
+                height: auto;
+                opacity: 1;
+                letter-spacing: 0em;
+                font-size: 18px;
+                text-align: left;
+                color: rgb(0, 0, 0);
+                text-transform: none;
+                padding-bottom: 0;
+                padding-top: 0;
+                mix-blend-mode: normal;
+                font-style: normal;
+                font-weight: regular;
+                position: static;
+            }
+
+            #g-sankey-final-Artboard_1 .g-pstyle0 {
+                font-weight: bold;
+                line-height: 29px;
+                height: 29px;
+                font-size: 24px;
+            }
+
+            #g-sankey-final-Artboard_1 .g-pstyle1 {
+                height: 22px;
+            }
+
+            #g-sankey-final-Artboard_1 .g-pstyle2 {
+                font-weight: 500;
+                line-height: 28px;
+                height: 28px;
+            }
+
+            #g-sankey-final-Artboard_1 .g-pstyle3 {
+                font-weight: bold;
+                height: 22px;
+            }
+
+            #g-sankey-final-Artboard_1 .g-pstyle4 {
+                font-weight: bold;
+                height: 22px;
+                text-align: right;
+            }
+
+            #g-sankey-final-Artboard_1 .g-pstyle5 {
+                height: 22px;
+                text-align: right;
+            }
+
+            #g-sankey-final-Artboard_1 .g-cstyle0 {
+                font-weight: bold;
+            }
+
+            #g-sankey-final-Artboard_1 .g-cstyle1 {
+                font-weight: 500;
+            }
+
+            #g-sankey-final-Artboard_2 {
+                position: relative;
+                overflow: hidden;
+            }
+
+            #g-sankey-final-Artboard_2 p {
+                font-family: arial, helvetica, sans-serif;
+                line-height: 12px;
+                height: auto;
+                opacity: 1;
+                letter-spacing: 0em;
+                font-size: 10px;
+                text-align: left;
+                color: rgb(0, 0, 0);
+                text-transform: none;
+                padding-bottom: 0;
+                padding-top: 0;
+                mix-blend-mode: normal;
+                font-style: normal;
+                font-weight: regular;
+                position: static;
+            }
+
+            #g-sankey-final-Artboard_2 .g-pstyle0 {
+                font-weight: bold;
+                line-height: 14px;
+                height: 14px;
+                font-size: 12px;
+            }
+
+            #g-sankey-final-Artboard_2 .g-pstyle1 {
+                height: 12px;
+            }
+
+            #g-sankey-final-Artboard_2 .g-pstyle2 {
+                font-weight: 500;
+                height: 12px;
+                font-size: 8px;
+            }
+
+            #g-sankey-final-Artboard_2 .g-pstyle3 {
+                font-weight: bold;
+                height: 12px;
+            }
+
+            #g-sankey-final-Artboard_2 .g-pstyle4 {
+                font-weight: bold;
+                height: 12px;
+                text-align: right;
+            }
+
+            #g-sankey-final-Artboard_2 .g-pstyle5 {
+                height: 12px;
+                text-align: right;
+            }
+
+            #g-sankey-final-Artboard_2 .g-cstyle0 {
+                font-weight: bold;
+            }
+
+            #g-sankey-final-Artboard_2 .g-cstyle1 {
+                font-weight: 500;
+            }
+
+            #g-sankey-final-Artboard_2 .g-cstyle2 {
+                font-weight: 500;
+                font-size: 8px;
+            }
+        </style>
+
+        <div id="g-sankey-final-box" class="ai2html">
+
+            <!-- Artboard: Artboard_1 -->
+            <div id="g-sankey-final-Artboard_1" class="g-artboard" style="width:720px; height:1603.4092735736px;"
+                data-aspect-ratio="0.449" data-min-width="720">
+                <div style=""></div>
+                <img id="g-sankey-final-Artboard_1-img" class="g-sankey-final-Artboard_1-img g-aiImg" alt=""
+                    src="sankey-final-Artboard_1.png" />
+                <div id="g-ai0-1" class="g-desktop g-aiAbs g-aiPointText"
+                    style="top:2.7262%;margin-top:-31.7px;left:1.6546%;width:652px;">
+                    <p class="g-pstyle0">Hispanic Children Make Up Nearly Half of Child Abuse </p>
+                    <p class="g-pstyle0">Reports in NYC, Yet More Foster Care Entries are Black</p>
+                </div>
+                <div id="g-ai0-2" class="g-desktop g-aiAbs g-aiPointText"
+                    style="top:5.3415%;margin-top:-12.6px;left:1.5442%;width:546px;">
+                    <p class="g-pstyle1">Based on NYC Child Welfare System demographics data in 2022.</p>
+                </div>
+                <div id="g-ai0-3" class="g-desktop g-aiAbs g-aiPointText"
+                    style="top:11.3996%;margin-top:-56.8px;left:29.782%;width:86px;">
+                    <p class="g-pstyle2">Hispanic</p>
+                    <p class="g-pstyle2">Black</p>
+                    <p class="g-pstyle2">White </p>
+                    <p class="g-pstyle2">Asian</p>
+                </div>
+                <div id="g-ai0-4" class="g-desktop g-aiAbs g-aiPointText"
+                    style="top:20.1973%;margin-top:-55.8px;left:29.6841%;width:402px;">
+                    <p class="g-pstyle1">Over <span class="g-cstyle0">90,000 reports</span> were made to the</p>
+                    <p class="g-pstyle1">Statewide Central Register of Child Abuse and </p>
+                    <p class="g-pstyle1">Maltreatment (SCR) in 2022, more than 41,000 </p>
+                    <p class="g-pstyle1">children in the reports are Hispanic while</p>
+                    <p class="g-pstyle1">around 35,000 are Black.</p>
+                </div>
+                <div id="g-ai0-5" class="g-desktop g-aiAbs g-aiPointText"
+                    style="top:40.454%;margin-top:-66.6px;left:9.2201%;width:328px;">
+                    <p class="g-pstyle3">12% of child abuse reports </p>
+                    <p class="g-pstyle1">are handled through Collaborative </p>
+                    <p class="g-pstyle1">Assessment, Response, Engagement </p>
+                    <p class="g-pstyle1">& Support (CARES), an alternative </p>
+                    <p class="g-pstyle1">approach to investigative measures. </p>
+                </div>
+                <div id="g-ai0-6" class="g-desktop g-aiAbs g-aiPointText"
+                    style="top:53.2893%;margin-top:-23.4px;left:19.2258%;width:303px;">
+                    <p class="g-pstyle1"><span class="g-cstyle0">More than half</span> of child abuse reports</p>
+                    <p class="g-pstyle1">are deemed unsubstantiated by CPS<span class="g-cstyle1">.</span></p>
+                </div>
+                <div id="g-ai0-7" class="g-desktop g-aiAbs g-aiPointText"
+                    style="top:69.3177%;margin-top:-23.4px;right:27.9744%;width:320px;">
+                    <p class="g-pstyle4">27% of child abuse reports become</p>
+                    <p class="g-pstyle5">subjects of an indicated investigation.</p>
+                </div>
+                <div id="g-ai0-8" class="g-desktop g-aiAbs g-aiPointText"
+                    style="top:84.9718%;margin-top:-23.4px;left:32.3075%;width:330px;">
+                    <p class="g-pstyle1"><span class="g-cstyle0">Less than 3%</span> of reported cases result</p>
+                    <p class="g-pstyle1">in children entering foster care.<span class="g-cstyle1"> </span></p>
+                </div>
+                <div id="g-ai0-9" class="g-desktop g-aiAbs g-aiPointText"
+                    style="top:91.2501%;margin-top:-13.1px;left:50.4648%;width:293px;">
+                    <p class="g-pstyle1"><span class="g-cstyle0">1,197</span> Black children in foster care</p>
+                </div>
+                <div id="g-ai0-10" class="g-desktop g-aiAbs g-aiPointText"
+                    style="top:93.4329%;margin-top:-13.1px;left:48.7573%;width:303px;">
+                    <p class="g-pstyle1"><span class="g-cstyle0">947</span> Hispanic children in foster care</p>
+                </div>
+                <div id="g-ai0-11" class="g-desktop g-aiAbs g-aiPointText"
+                    style="top:95.6158%;margin-top:-13.1px;left:51.6572%;width:280px;">
+                    <p class="g-pstyle1"><span class="g-cstyle0">134</span> White children in foster care</p>
+                </div>
+                <div id="g-ai0-12" class="g-desktop g-aiAbs g-aiPointText"
+                    style="top:97.7986%;margin-top:-13.1px;left:53.3072%;width:269px;">
+                    <p class="g-pstyle1"><span class="g-cstyle0">73 </span>Asian children in foster care</p>
+                </div>
+            </div>
+
+            <!-- Artboard: Artboard_2 -->
+            <div id="g-sankey-final-Artboard_2" class="g-artboard" style="max-width: 330px;max-height: 725px"
+                data-aspect-ratio="0.455" data-min-width="0" data-max-width="719">
+                <div style="padding: 0 0 219.7256% 0;"></div>
+                <img id="g-sankey-final-Artboard_2-img" class="g-sankey-final-Artboard_2-img g-aiImg" alt=""
+                    src="sankey-final-Artboard_2.png" />
+                <div id="g-ai1-1" class="g-mobile g-aiAbs g-aiPointText"
+                    style="top:2.9798%;margin-top:-15.6px;left:1.7406%;width:337px;">
+                    <p class="g-pstyle0">Hispanic Children Make Up Nearly Half of Child Abuse </p>
+                    <p class="g-pstyle0">Reports in NYC, Yet More Foster Care Entries are Black</p>
+                </div>
+                <div id="g-ai1-2" class="g-mobile g-aiAbs g-aiPointText"
+                    style="top:7.5734%;margin-top:-18.9px;left:1.6429%;width:313px;">
+                    <p class="g-pstyle1">Based on NYC Child Welfare System demographics data in 2022.</p>
+                    <p>&nbsp;</p>
+                </div>
+                <div id="g-ai1-3" class="g-mobile g-aiAbs g-aiPointText"
+                    style="top:NaN%;margin-top:-NaNpx;left:16.9735%;width:39px;">
+                    <p>&nbsp;</p>
+                    <p class="g-pstyle2">Black</p>
+                </div>
+                <div id="g-ai1-4" class="g-mobile g-aiAbs g-aiPointText"
+                    style="top:8.5892%;margin-top:-6.3px;left:25.8306%;width:41px;">
+                    <p class="g-pstyle2">White</p>
+                </div>
+                <div id="g-ai1-5" class="g-mobile g-aiAbs g-aiPointText"
+                    style="top:8.5892%;margin-top:-6.3px;left:35.245%;width:40px;">
+                    <p class="g-pstyle2">Asian</p>
+                </div>
+                <div id="g-ai1-6" class="g-mobile g-aiAbs g-aiPointText"
+                    style="top:8.7271%;margin-top:-6.3px;left:4.8126%;width:50px;">
+                    <p class="g-pstyle2">Hispanic</p>
+                </div>
+                <div id="g-ai1-7" class="g-mobile g-aiAbs g-aiPointText"
+                    style="top:18.0548%;margin-top:-30.9px;left:36.9356%;width:230px;">
+                    <p class="g-pstyle1">Over <span class="g-cstyle0">90,000 reports</span> were made to the</p>
+                    <p class="g-pstyle1">Statewide Central Register of Child Abuse and </p>
+                    <p class="g-pstyle1">Maltreatment (SCR) in 2022, more than </p>
+                    <p class="g-pstyle1">41,000 children in the reports are Hispanic </p>
+                    <p class="g-pstyle1">while around 35,000 are Black.</p>
+                </div>
+                <div id="g-ai1-8" class="g-mobile g-aiAbs g-aiPointText"
+                    style="top:42.7411%;margin-top:-36.9px;left:3.4511%;width:192px;">
+                    <p class="g-pstyle3">12% of child abuse reports </p>
+                    <p class="g-pstyle1">are handled through Collaborative </p>
+                    <p class="g-pstyle1">Assessment, Response, Engagement </p>
+                    <p class="g-pstyle1">& Support (CARES), an alternative </p>
+                    <p class="g-pstyle1">approach to investigative measures. </p>
+                </div>
+                <div id="g-ai1-9" class="g-mobile g-aiAbs g-aiPointText"
+                    style="top:52.671%;margin-top:-12.9px;left:15.5152%;width:178px;">
+                    <p class="g-pstyle1"><span class="g-cstyle0">More than half</span> of child abuse reports</p>
+                    <p class="g-pstyle1">are deemed unsubstantiated by CPS<span class="g-cstyle1">.</span></p>
+                </div>
+                <div id="g-ai1-10" class="g-mobile g-aiAbs g-aiPointText"
+                    style="top:67.5656%;margin-top:-12.9px;right:21.7673%;width:188px;">
+                    <p class="g-pstyle4">27% of child abuse reports become</p>
+                    <p class="g-pstyle5">subjects of an indicated investigation.</p>
+                </div>
+                <div id="g-ai1-11" class="g-mobile g-aiAbs g-aiPointText"
+                    style="top:83.0474%;margin-top:-13.2px;left:43.7488%;width:202px;">
+                    <p class="g-pstyle3">Less than 3% of reported cases result</p>
+                    <p class="g-pstyle3">in children entering foster care.<span class="g-cstyle2"> </span></p>
+                </div>
+                <div id="g-ai1-12" class="g-mobile g-aiAbs g-aiPointText"
+                    style="top:89.3916%;margin-top:-7.2px;left:51.9531%;width:173px;">
+                    <p class="g-pstyle1"><span class="g-cstyle0">1,197</span> Black children in foster care</p>
+                </div>
+                <div id="g-ai1-13" class="g-mobile g-aiAbs g-aiPointText"
+                    style="top:91.7361%;margin-top:-7.2px;left:50.2692%;width:178px;">
+                    <p class="g-pstyle1"><span class="g-cstyle0">947</span> Hispanic children in foster care</p>
+                </div>
+                <div id="g-ai1-14" class="g-mobile g-aiAbs g-aiPointText"
+                    style="top:94.2184%;margin-top:-7.2px;left:54.1444%;width:165px;">
+                    <p class="g-pstyle1"><span class="g-cstyle0">134</span> White children in foster care</p>
+                </div>
+                <div id="g-ai1-15" class="g-mobile g-aiAbs g-aiPointText"
+                    style="top:96.1492%;margin-top:-7.2px;left:55.9954%;width:159px;">
+                    <p class="g-pstyle1"><span class="g-cstyle0">73 </span>Asian children in foster care</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- End ai2html - 2024-05-07 19:10 -->
+        <figcaption>Sankey diagram by Katrina Ventura</figcaption>
+    </figure>
+    <br>
+    <div class="content">
+        <p>At the initial stages, there's no significant difference between Black and Hispanic children in terms of
+            indicated and unsubstantiated investigations. However, a significant disparity emerges between Black and
+            Hispanic children at later stages, particularly in the transition to foster care, indicating systemic
+            biases.</p>
+
+        <p>Results of the chi-square test show a significant disparity between the number of Black and Hispanic child
+            abuse reports being handled through the alternative CARES program, where 12% of Hispanic cases end up in
+            CARES compared to 11% of Black cases.</p>
+
+        <p>The difference becomes more pronounced when the same test was conducted to compare foster care entries where
+            1,197 Black children in New York ended up in foster care compared to 947 Hispanic children. In this test the
+            difference was drastic, with a p-value approaching zero, suggesting that Black and Hispanic children have
+            vastly different rates of placement into foster care.</p>
+
+        <p>Aside from race, poverty was seen to have influenced the number of child abuse reports in a certain area. For
+            this, the story examined the distribution of child abuse reports or SCR intakes in each Community District
+            in New York City and factored in the percent poverty of households with children based on data from the
+            Institute for Children, Poverty, and Homelessness.</p>
+
+        <p>Initial analysis showed that community districts with higher percentages of poverty tend to get more child
+            abuse reports, with more concentration in the Bronx such as Mott Haven to Melrose, Hunts Point to Longwood,
+            Morrisania to Crotona, and Belmont to East Tremont. But the biggest outlier appeared to be Brooklyn
+            Community District 16 in Brownsville, wherein more than a third of households with children were in poverty,
+            and over 1,300 child abuse reports were made in 2022.</p>
+    </div>
+
+    <figure><img src="reports-poverty.png">
+        <figcaption>Child Abuse Reports in NYC by Community District and Percent Poverty of Households with Children
+        </figcaption>
+    </figure>
+
+    </figure>
+    <div class="content">
+        <p>The final statistical tool used in this story was multivariable regression which incorporated data such as
+            percent of households with children living in poverty, percent of Black households, and percent of Hispanic
+            households. The goal of running the model is to see which of the variables greatly influence the number of
+            child abuse reports that a community district receives.</p>
+
+        <p>The multivariable regression showed that the percentage of Black households is the strongest predictor of the
+            increase or decrease in child abuse reports. The percent of child abuse reports in a community district
+            increases by approximately 0.007655 for every one-unit increase in the percent of Black households, holding
+            other variables constant.</p>
+
+        <p>The reverse is true when accounting for the percentage of households with children living in poverty and the
+            percentage of White households in the community district. Where higher percentages of households with
+            children in poverty are associated with higher percentages of child abuse reports, while higher percentages
+            of White households are associated with lower percentages of child abuse reports.</p>
+
+        <p>While poverty appeared to be a good predictor of the likelihood of a district receiving more child abuse
+            reports, the community's racial or ethnic composition has a stronger influence on whether an area will have
+            higher or lower rates of such reports.</p>
+
+        <p>The New York State Office of Children and Family Services said it has begun offering training to mandated
+            reporters to address those biases.</p>
+
+        <p>“We are really trying to educate our mandated reporters on what they are obligated to do in order to protect
+            the health and safety of children and what they are not obligated to do, which is judge against poverty and
+            other biases that they may have,” said OCFS Acting Commissioner Suzanne Miles-Gustave.</p>
+
+        <p>After five years, the court granted Bryant's children.</p>
+
+        <p>She has won her battle with substance abuse and now works as a Parent Advocate Director for Rise where she
+            provides support to parents who had their children taken away by ACS.</p>
+
+        <p>When asked how she felt about the child welfare system, Bryant said it would have been better if the ACS
+            supported her instead of removing her children.</p>
+
+        <p>“They could have helped me with services and home to keep my families together instead of taking that support
+            and traumatizing them,” said Bryant. “So it was a rescue but it was also pain.”</p>
+
+    </div>
+
+    <script type="text/javascript">
+        (function () {
+            // only want one resizer on the page
+            if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+            document.documentElement.className += " g-resizer-v3-init";
+            // require IE9+
+            if (!("querySelector" in document)) return;
+            function resizer() {
+                var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+                    widthById = {};
+                elements.forEach(function (el) {
+                    var parent = el.parentNode,
+                        width = widthById[parent.id] || parent.getBoundingClientRect().width,
+                        minwidth = el.getAttribute("data-min-width"),
+                        maxwidth = el.getAttribute("data-max-width");
+                    widthById[parent.id] = width;
+
+                    if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+                        el.style.display = "block";
+                    } else {
+                        el.style.display = "none";
+                    }
+                });
+                try {
+                    if (window.parent && window.parent.$) {
+                        window.parent.$("body").trigger("resizedcontent", [window]);
+                    }
+                    if (window.require) {
+                        require(['foundation/main'], function () {
+                            require(['shared/interactive/instances/app-communicator'], function (AppCommunicator) {
+                                AppCommunicator.triggerResize();
+                            });
+                        });
+                    }
+                } catch (e) { console.log(e); }
+            }
+
+            document.addEventListener('DOMContentLoaded', resizer);
+            // feel free to replace throttle with _.throttle, if available
+            window.addEventListener('resize', throttle(resizer, 200));
+
+            function throttle(func, wait) {
+                // from underscore.js
+                var _now = Date.now || function () { return new Date().getTime(); },
+                    context, args, result, timeout = null, previous = 0;
+                var later = function () {
+                    previous = _now();
+                    timeout = null;
+                    result = func.apply(context, args);
+                    if (!timeout) context = args = null;
+                };
+                return function () {
+                    var now = _now(), remaining = wait - (now - previous);
+                    context = this;
+                    args = arguments;
+                    if (remaining <= 0 || remaining > wait) {
+                        if (timeout) {
+                            clearTimeout(timeout);
+                            timeout = null;
+                        }
+                        previous = now;
+                        result = func.apply(context, args);
+                        if (!timeout) context = args = null;
+                    } else if (!timeout && options.trailing !== false) {
+                        timeout = setTimeout(later, remaining);
+                    }
+                    return result;
+                };
+            }
+
+
+        })();
+    </script>
+
+    <div class="footer">
+        <div class="content">
+            <p>View project on <a href="https://github.com/katrventura/nyc-child-services/">GitHub</a></p>
+            <p>©2024 Katrina Ventura</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
